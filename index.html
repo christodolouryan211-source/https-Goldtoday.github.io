@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>GoldToday — Gold & Financial Markets</title>
+<meta name="description" content="GoldToday provides market dashboards, gold prices, financial market information and educational market analysis.">
+<meta name="theme-color" content="#0b0f17">
+
+<!-- Google AdSense: after your site is approved, paste the exact AdSense code Google gives you here. -->
+<!-- Example:
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=YOUR_PUBLISHER_ID" crossorigin="anonymous"></script>
+-->
+
+<style>
+:root{--bg:#070b12;--panel:#0d1420;--panel2:#111a28;--text:#eef3f8;--muted:#8e9bad;--line:#243143;--gold:#e5b94f;--green:#32d583;--red:#ff6675}
+*{box-sizing:border-box}body{margin:0;background:linear-gradient(180deg,#080c13,#0b1018);color:var(--text);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+a{color:inherit;text-decoration:none}.wrap{max-width:1180px;margin:auto;padding:0 20px}
+header{position:sticky;top:0;z-index:10;background:rgba(7,11,18,.94);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.nav{height:70px;display:flex;align-items:center;justify-content:space-between}.brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:22px}.logo{width:38px;height:38px;border-radius:12px;background:linear-gradient(135deg,#f5d36b,#a97618);display:grid;place-items:center;color:#15100a;font-weight:900}
+nav{display:flex;gap:22px;color:#b9c4d2;font-size:14px}nav a:hover{color:white}
+.hero{padding:70px 0 40px}.hero-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:30px;align-items:center}
+.badge{display:inline-block;border:1px solid #3a4656;background:#111a27;border-radius:999px;padding:7px 12px;color:#cbd5e1;font-size:12px}
+h1{font-size:clamp(38px,6vw,68px);line-height:.98;margin:18px 0}.gold{color:var(--gold)}.hero p{color:var(--muted);font-size:18px;line-height:1.7;max-width:650px}
+.cta{display:inline-block;margin-top:12px;background:var(--gold);color:#171208;font-weight:800;padding:13px 18px;border-radius:10px}
+.market-card{background:radial-gradient(circle at 80% 20%,#263149,#101722 45%);border:1px solid var(--line);border-radius:20px;padding:24px;box-shadow:0 20px 60px rgba(0,0,0,.25)}
+.price{font-size:40px;font-weight:800;margin:8px 0}.up{color:var(--green)}.down{color:var(--red)}
+.spark{height:120px;margin-top:20px;position:relative;overflow:hidden;border-bottom:1px solid #263244}
+.spark svg{width:100%;height:100%}.spark path{fill:none;stroke:var(--gold);stroke-width:3}
+.section{padding:35px 0}.section h2{font-size:30px;margin-bottom:8px}.sub{color:var(--muted)}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.card{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:20px}.card h3{margin:0 0 8px}.big{font-size:27px;font-weight:750}.tiny{font-size:12px;color:var(--muted)}
+.ad{min-height:110px;border:1px dashed #3a4656;border-radius:14px;display:grid;place-items:center;color:#6f7c8e;background:#0a1019;margin:24px 0}
+.table{width:100%;border-collapse:collapse;background:var(--panel);border:1px solid var(--line);border-radius:14px;overflow:hidden}.table th,.table td{padding:15px;text-align:left;border-bottom:1px solid var(--line)}.table th{color:#8e9bad;font-size:12px;text-transform:uppercase}.table td{font-weight:600}
+footer{margin-top:50px;border-top:1px solid var(--line);padding:30px 0;color:var(--muted);font-size:14px}
+@media(max-width:800px){.hero-grid{grid-template-columns:1fr}.grid{grid-template-columns:1fr 1fr}nav{display:none}}
+@media(max-width:520px){.grid{grid-template-columns:1fr}.hero{padding-top:45px}.wrap{padding:0 15px}}
+</style>
+</head>
+<body>
+<header><div class="wrap nav">
+<a class="brand" href="#"><span class="logo">G</span>GoldToday</a>
+<nav><a href="#markets">Markets</a><a href="#gold">Gold</a><a href="#analysis">Analysis</a><a href="#contact">Contact</a></nav>
+</div></header>
+
+<main>
+<section class="hero"><div class="wrap hero-grid">
+<div>
+<span class="badge">MARKET INFORMATION • EDUCATION • ANALYSIS</span>
+<h1>Track <span class="gold">Gold</span> and the markets with clarity.</h1>
+<p>A welcoming, mobile-first market dashboard for gold prices, major financial indicators and practical market education. Data shown on this site should be checked against your preferred financial-data provider before making decisions.</p>
+<a class="cta" href="#markets">View markets ↓</a>
+</div>
+<div class="market-card" id="gold">
+<div class="tiny">GOLD / USD</div>
+<div class="price" id="goldPrice">Loading…</div>
+<div id="goldChange" class="up">Market data loading</div>
+<div class="spark"><svg viewBox="0 0 600 120" preserveAspectRatio="none"><path d="M0 90 C50 80 65 92 100 72 S160 82 190 55 S240 64 275 40 S325 55 350 30 S410 60 445 45 S500 55 530 25 S575 35 600 18"/></svg></div>
+<div class="tiny" style="margin-top:12px">Live-data connection placeholder — connect a licensed market-data API before publishing price claims.</div>
+</div>
+</div></section>
+
+<section class="section" id="markets"><div class="wrap">
+<h2>Market dashboard</h2><p class="sub">Clean market cards ready for a licensed live-data feed.</p>
+<div class="grid" style="margin-top:18px">
+<div class="card"><h3>Gold</h3><div class="big" id="goldCard">—</div><div class="tiny">XAU/USD</div></div>
+<div class="card"><h3>EUR/USD</h3><div class="big">—</div><div class="tiny">Connect live FX feed</div></div>
+<div class="card"><h3>USD Index</h3><div class="big">—</div><div class="tiny">Connect licensed feed</div></div>
+</div>
+<div class="ad">Google AdSense placement — appears after your AdSense account/site is approved and the official code is installed.</div>
+</div></section>
+
+<section class="section" id="analysis"><div class="wrap">
+<h2>Market overview</h2><p class="sub">Educational information, not financial advice.</p>
+<table class="table" style="margin-top:18px"><thead><tr><th>Asset</th><th>Symbol</th><th>Status</th><th>Source</th></tr></thead>
+<tbody>
+<tr><td>Gold</td><td>XAU/USD</td><td class="up">Live feed ready</td><td>Licensed API required</td></tr>
+<tr><td>EUR/USD</td><td>EURUSD</td><td>Feed ready</td><td>Licensed API required</td></tr>
+<tr><td>US Dollar Index</td><td>DXY</td><td>Feed ready</td><td>Licensed API required</td></tr>
+</tbody></table>
+</div></section>
+
+<section class="section" id="contact"><div class="wrap">
+<h2>Contact GoldToday</h2><p class="sub">For partnerships, advertising and website enquiries.</p>
+<div class="card" style="margin-top:18px">
+<p><strong>Email:</strong> <a href="mailto:YOUR_EMAIL@example.com">YOUR_EMAIL@example.com</a></p>
+<p class="tiny">Replace the placeholder email with your real contact address before publishing.</p>
+</div>
+</div></section>
+</main>
+
+<footer><div class="wrap">© 2026 GoldToday. Market information is provided for educational and informational purposes.</div></footer>
+
+<script>
+/* Replace this demo updater with your licensed market-data API.
+   Do not scrape or redistribute market data without permission. */
+const demoGold = 2650.00;
+document.getElementById('goldPrice').textContent = '$' + demoGold.toLocaleString(undefined,{minimumFractionDigits:2,maximumFractionDigits:2});
+document.getElementById('goldCard').textContent = '$' + demoGold.toLocaleString(undefined,{minimumFractionDigits:2,maximumFractionDigits:2});
+</script>
+</body>
+</html>
